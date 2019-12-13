@@ -1,15 +1,31 @@
-<h1>Joblists#index</h1>
-<%= link_to 'new job',new_joblist_path,class:'btn btn-info'%>
-<% @joblists.each do |job|%>
-	<h2><%= job.title %></h2>
-	<%= link_to 'readmore',joblist_path(job.id),class:'btn btn-info'%>
-	<%= link_to 'edit',edit_joblist_path(job.id),class:'btn btn-info'%>
-	<%= link_to 'delete',joblists_path(job.id),method:"DELETE",data: {confirm:"Delete this data?"},class:'btn btn-info'%>
-	<br/>
-	<% if job.status == 'available'%>
-		<i style="color:green">status : <%= job.status %></i></p>
-	<% else %>
-		<i style="color:red">status : <%= job.status %></i></p>
+<!-- head job -->
+
+<div class="jumbotron jumbotron-fluid" style="background-color: #018383;color: white">
+  	<div class="container">
+	  <h1>Anda kurang kerjaan?</h1>
+	  <p>Kami hadir untuk menemani dan mencarikan kegabutan anda</p>
+	  <%= link_to 'new job',new_joblist_path,class:'btn btn-warning',style:"color:white"%>
+	</div>
+</div>
+
+<!-- list job -->
+<div class="card-columns" style="padding-right: 20px;padding-left: 20px;">
+	<% @joblists.each do |job|%>
+		<div class="card bg-light"  style="color:#02a8a8;tex">
+		    <div class="card-body text-center" style="background-color: #f5dea3">
+				<h2><strong><%= job.title %></strong></h2>
+				<div class="btn-group">
+				<%= link_to 'readmore',joblist_path(job.id),class:'btn btn-info'%>
+				<%= link_to 'edit',edit_joblist_path(job.id),class:'btn btn-secondary'%>
+				<%= link_to 'delete',joblists_path(job.id),method:"DELETE",data: {confirm:"Delete this data?"},class:'btn btn-secondary'%>
+				</div>
+				<hr/>
+				<% if job.status == 'available'%>
+					<i style="color:green">status : <%= job.status %></i></p>
+				<% else %>
+					<i style="color:red">status : <%= job.status %></i></p>
+				<% end %>
+			</div>
+		</div>
 	<% end %>
-	<hr/>
-<% end %>
+</div>

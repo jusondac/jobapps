@@ -1,19 +1,26 @@
-<h1>Joblists#new</h1>
-
-<%= form_for @joblist do |f|%>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-	<%= @joblist.errors[:title].first unless @joblist.errors[:title].blank? %>
-	<br/>
-	<%= f.label :description %>
-	<%= f.text_field :description%>
-	<%= @joblist.errors[:description].first unless @joblist.errors[:description].blank?%>
-	<br/>
-	<%= f.label :status %>
-	<%= f.radio_button :status,'available'%>
-	<%= label :joblist_status,'available'%>
-	<%= f.radio_button :status,'unavailable'%>
-	<%= label :joblist_status,'unavailable'%>
-	<br/>
-	<%= f.submit :submit %>
-<% end %>
+<div class="jumbotron jumbotron-fluid">
+  	<div class="container container" style="align-self: center;">
+		<%= form_for @joblist do |f|%>
+			<%= f.label :title %>
+			<br/>
+			<%= f.text_field :title %>
+			<%= @joblist.errors[:title].first unless @joblist.errors[:title].blank? %>
+			<br/>
+			<%= 
+			f.label :description %>
+			<br/>
+			<%= f.text_field :description%>
+			<%= @joblist.errors[:description].first unless @joblist.errors[:description].blank?%>
+			<br/>
+			<%= f.label :status %>
+			<br/>
+			<%= f.radio_button :status,'available'%>
+			<%= label :joblist_status,'available'%>
+			<%= f.radio_button :status,'unavailable'%>
+			<%= label :joblist_status,'unavailable'%>
+			<br/>
+			<%= f.submit :submit,class:"btn btn-info" %>
+			<%= link_to 'kembali ',joblists_path,class:"btn"%>
+		<% end %>
+	</div>
+</div>
