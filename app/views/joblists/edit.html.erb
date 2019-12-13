@@ -1,0 +1,17 @@
+<%= form_for @joblist do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br/>
+<%= f.label :description %>
+<%= f.text_field :description%>
+<br/>
+<%= f.label :status%>
+<%= f.radio_button :status,'available' %>
+<%= label :joblist_status,'available'%>
+<%= f.radio_button :status,'unavailable'%>
+<%= label :joblist_status,'unavailable'%>
+<br/>
+<%= f.submit :kirim%>
+<br/>
+<%= link_to 'back to index',joblists_path%>
+<%end%>
