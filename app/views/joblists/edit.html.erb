@@ -1,17 +1,24 @@
-<%= form_for @joblist do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br/>
-<%= f.label :description %>
-<%= f.text_field :description%>
-<br/>
-<%= f.label :status%>
-<%= f.radio_button :status,'available' %>
-<%= label :joblist_status,'available'%>
-<%= f.radio_button :status,'unavailable'%>
-<%= label :joblist_status,'unavailable'%>
-<br/>
-<%= f.submit :kirim%>
-<br/>
-<%= link_to 'back to index',joblists_path%>
-<%end%>
+<div class="jumbotron jumbotron-fluid">
+  	<div class="container container" style="align-self: center;">
+		<%= form_for @joblist do |f| %>
+		<%= f.label :title %>
+		<br/>
+		<%= f.text_field :title %>
+		<br/>
+		<%= f.label :description %>
+		<br/>
+		<%= f.text_field :description%>
+		<br/>
+		<br/>
+		<%= f.label :status%>
+		<br/>
+		<%= f.radio_button :status,'available' %>
+		<%= label :joblist_status,'available'%>
+		<%= f.radio_button :status,'unavailable'%>
+		<%= label :joblist_status,'unavailable'%>
+		<br/>
+		<%= f.submit :update,class:"btn btn-warning",style:"color:white"%>
+		<%= link_to 'kembali',joblists_path,class:"btn"%>
+		<%end%>
+	</div>
+</div>

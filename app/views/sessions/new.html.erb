@@ -1,9 +1,20 @@
-<%= form_tag sessions_path do |f|%>
-<%= label_tag :username %>
-<%= text_field_tag :username,(params[:username] unless params[:username].blank? )%>
-<br/>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-<br/>
-<%= submit_tag :submit %>
-<% end %>
+<div class="jumbotron jumbotron-fluid">
+  	<div class="container container" style="align-self: center;">
+		<%= form_tag sessions_path do |f|%>
+		<div class="form-group">
+			<%= label_tag :username %>
+			<br/>
+			<%= text_field_tag :username,(params[:username] unless params[:username].blank? )%>
+		</div>
+		<br/>
+		<div class="form-group">
+			<%= label_tag :password %>
+			<br/>
+			<%= password_field_tag :password%>
+		</div>
+		<br/>
+		<%= submit_tag :submit,class:"btn btn-warning",style:"color:white" %>
+		<%= link_to 'kembali',joblists_path,class:"btn btn-warning",style:"color:white"%>
+		<% end %>
+	</div>
+</div>
