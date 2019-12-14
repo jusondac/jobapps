@@ -16,5 +16,9 @@
 	<%= f.password_field :password_confirmation%>
 	<%= @user.errors[:password_confirmation].first unless @user.errors[:password_confirmation].blank?%>
 	<br/>
+	<%= f.label :humanizer_answer,@user.humanizer_question %>
+	<%= f.text_field :humanizer_answer %>
+	<%= f.hidden_field :humanizer_question_id%>
+	<br/>
 	<%= f.submit :submit %>
 <% end %>

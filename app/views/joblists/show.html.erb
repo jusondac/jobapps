@@ -1,8 +1,12 @@
-<h3><%= @joblist.title %></h3>
-<p><i><%= @joblist.description %></i></p>
-<p><%= link_to 'back to index', joblists_path, class:'btn btn-info'%></p>
-<% if @joblist.status == 'available'%>
-	<i style="color:green">status : <%= @joblist.status %></i></p>
-<% else %>
-	<i style="color:red">status : <%= @joblist.status %></i></p>
-<% end %>
+<div class="jumbotron jumbotron-fluid" style="background-color: #f5dea3;color: #02a8a8">
+  	<div class="container">
+		<h3><%= @joblist.title %></h3>
+		<p><i><%= @joblist.description %></i></p>
+		<p><%= link_to 'back to index', joblists_path, class:'btn btn-info'%></p>
+		<% if @joblist.status == 'available'%>
+			<i style="color:green">status : <%= @joblist.status %></i></p>
+		<% else %>
+			<i style="color:red">status : <%= @joblist.status %></i></p>
+		<% end %>
+	</div>
+</div>

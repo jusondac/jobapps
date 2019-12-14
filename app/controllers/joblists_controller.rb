@@ -1,4 +1,6 @@
 class JoblistsController < ApplicationController
+  before_action :check_current_user, only:[:new,:edit,:update,:create,:destroy]
+
   def index
   	@joblists = Joblist.all
   end
