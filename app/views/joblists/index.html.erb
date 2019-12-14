@@ -17,7 +17,7 @@
 				<div class="btn-group">
 				<%= link_to 'readmore',joblist_path(job.id),class:'btn btn-info'%>
 				<%= link_to 'edit',edit_joblist_path(job.id),class:'btn btn-secondary'%>
-				<%= link_to 'delete',joblists_path(job.id),method:"DELETE",data: {confirm:"Delete this data?"},class:'btn btn-secondary'%>
+				<%= link_to 'delete',joblist_path(job.id),method:'delete',data:{confirm:"delete this fucking job?"},class:'btn btn-secondary'%>
 				</div>
 				<hr/>
 				<% if job.status == 'available'%>

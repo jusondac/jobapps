@@ -15,6 +15,17 @@ class JoblistsController < ApplicationController
     @joblist = Joblist.find_by_id(params[:id])
   end
 
+  def destroy
+    @joblist = Joblist.find_by_id(params[:id])
+    if @joblist.destroy
+      flash[:notice] = "Success"
+      redirect_to action:'index'
+    else
+      flash[:errors] = "fails"
+      redirect_to action:'index'
+    end
+  end
+
   def update
     @joblist = Joblist.find_by_id(params[:id])
     if @joblist.update(params_joblist)
@@ -35,17 +46,6 @@ class JoblistsController < ApplicationController
   	  flash[:errors] = "fails bro"
   	  render 'new'
   	end
-  end
-
-  def destroy
-    @joblist = Joblist.find_by_id(params[:id])
-    if @joblist.destroy
-      flash[:notice] = "Success"
-      redirect_to action:'index'
-    else
-      flash[:error] = "fails"
-      redirect_to action:'index'
-    end
   end
 
   private
