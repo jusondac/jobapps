@@ -7,8 +7,7 @@
 		<% if !current_user %>
 			<%= link_to 'log in', new_session_path,class:'btn btn-warning',style:"color:white" %>
 			<%= link_to 'sign up',sign_up_path,class:'btn btn-warning',style:"color:white"%>
-		<% else %>
-			Hello <%= current_user.username%><br/><br/>
+		<% else %> 
 			<%= link_to 'log out', session_path(current_user.id), method:"DELETE",class:"btn btn-warning",style:"color:white"%>
 			<%= link_to 'new job',new_joblist_path,class:'btn btn-warning',style:"color:white"%>
 		<% end %>
